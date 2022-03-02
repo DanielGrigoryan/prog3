@@ -1,4 +1,4 @@
-function generator(matLen, gr, grEat, pr,ae,pa) {
+function generator(matLen, gr, grEat, pr, ae, pa,ach ) {
     let matrix = [];
     for (let i = 0; i < matLen; i++) {
         matrix[i] = [];
@@ -33,11 +33,17 @@ function generator(matLen, gr, grEat, pr,ae,pa) {
         if (matrix[x][y] == 0) {
             matrix[x][y] = 4;
         }
-    }for (let i = 0; i < pa; i++) {
+    } for (let i = 0; i < pa; i++) {
         let x = Math.floor(Math.random() * matLen);
         let y = Math.floor(Math.random() * matLen);
         if (matrix[x][y] == 0) {
             matrix[x][y] = 5;
+        }
+    }  for (let i = 0; i < ach; i++) {
+        let x = Math.floor(Math.random() * matLen);
+        let y = Math.floor(Math.random() * matLen);
+        if (matrix[x][y] == 0) {
+            matrix[x][y] = 6;
         }
     }
     return matrix;
@@ -45,13 +51,14 @@ function generator(matLen, gr, grEat, pr,ae,pa) {
 
 let side = 20;
 
-let matrix = generator(15, 45, 10, 11,5,20);
+let matrix = generator(15, 45, 10, 11, 10,10,10 );
 
 let grassArr = []
 let grassEaterArr = []
 let predatorArr = []
 let amenakerArr = []
-let patArr= []
+let patArr = []
+let averichArr = []
 
 function setup() {
     createCanvas(matrix[0].length * side, matrix.length * side);
@@ -71,10 +78,13 @@ function setup() {
             } else if (matrix[y][x] == 4) {
                 let grE = new Amenaker(x, y)
                 amenakerArr.push(grE)
-            }else if (matrix[y][x] == 1) {
+            } else if (matrix[y][x] == 1) {
                 let pa = new Pat(x, y)
                 patArr.push(pa)
-            }
+            } else if (matrix[y][x] == 6) {
+                let grE= new Averich(x, y)
+                averichArr.push(grE)
+            } 
         }
     }
 }
@@ -92,8 +102,10 @@ function draw() {
                 fill('red')
             } else if (matrix[y][x] == 4) {
                 fill('blue')
-            }else if (matrix[y][x] == 5) {
-                fill('black')
+            } else if (matrix[y][x] == 5) {
+                fill('#00F7FF')
+            }else if (matrix[y][x] == 6) {
+                fill('#DE1193')
             }
             rect(x * side, y * side, side, side)
         }
@@ -117,5 +129,8 @@ function draw() {
     for (let i in patArr) {
         patArr[i].mul()
         patArr[i].eat()
+    }for (let i in averichArr) {
+        averichArr[i].mul()
+        averichArr[i].eat()
     }
 }
