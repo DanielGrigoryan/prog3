@@ -1,4 +1,4 @@
-function generator(matLen, gr, grEat, pr, ae, pa,ach ) {
+function generator(matLen, gr, grEat, pr, ae, pa, ach, sk) {
     let matrix = [];
     for (let i = 0; i < matLen; i++) {
         matrix[i] = [];
@@ -39,19 +39,26 @@ function generator(matLen, gr, grEat, pr, ae, pa,ach ) {
         if (matrix[x][y] == 0) {
             matrix[x][y] = 5;
         }
-    }  for (let i = 0; i < ach; i++) {
+    } for (let i = 0; i < ach; i++) {
         let x = Math.floor(Math.random() * matLen);
         let y = Math.floor(Math.random() * matLen);
         if (matrix[x][y] == 0) {
             matrix[x][y] = 6;
         }
+    } for (let i = 0; i < sk; i++) {
+        let x = Math.floor(Math.random() * matLen);
+        let y = Math.floor(Math.random() * matLen);
+        if (matrix[x][y] == 0) {
+            matrix[x][y] = 7;
+        }
     }
+
     return matrix;
 }
 
 let side = 20;
 
-let matrix = generator(15, 45, 10, 11, 10,10,10 );
+let matrix = generator(15, 45, 10, 11, 10, 10, 10,20);
 
 let grassArr = []
 let grassEaterArr = []
@@ -59,6 +66,7 @@ let predatorArr = []
 let amenakerArr = []
 let patArr = []
 let averichArr = []
+let sunkArr = []
 
 function setup() {
     createCanvas(matrix[0].length * side, matrix.length * side);
@@ -82,9 +90,12 @@ function setup() {
                 let pa = new Pat(x, y)
                 patArr.push(pa)
             } else if (matrix[y][x] == 6) {
-                let grE= new Averich(x, y)
+                let grE = new Averich(x, y)
                 averichArr.push(grE)
-            } 
+            } else if (matrix[y][x] == 7) {
+                let grE = new Sunk(x, y)
+                sunkArr.push(grE)
+            }
         }
     }
 }
@@ -104,8 +115,10 @@ function draw() {
                 fill('blue')
             } else if (matrix[y][x] == 5) {
                 fill('#00F7FF')
-            }else if (matrix[y][x] == 6) {
+            } else if (matrix[y][x] == 6) {
                 fill('#DE1193')
+            } else if (matrix[y][x] == 7) {
+                fill('#09C0A8')
             }
             rect(x * side, y * side, side, side)
         }
@@ -129,8 +142,11 @@ function draw() {
     for (let i in patArr) {
         patArr[i].mul()
         patArr[i].eat()
-    }for (let i in averichArr) {
+    } for (let i in averichArr) {
         averichArr[i].mul()
         averichArr[i].eat()
+    } for (let i in sunkArr) {
+        sunkArr[i].mul()
+        sunkArr[i].eat()
     }
 }
