@@ -58,7 +58,7 @@ function generator(matLen, gr, grEat, pr, ae, pa, ach, sk) {
 
 let side = 20;
 
-let matrix = generator(15, 45, 10, 11, 10, 10, 10,20);
+let matrix = generator(15, 45, 10, 11, 10, 10, 10, 20);
 
 let grassArr = []
 let grassEaterArr = []
@@ -150,3 +150,43 @@ function draw() {
         sunkArr[i].eat()
     }
 }
+var clickCount = 0;
+function draw1(evt) {
+    clickCount++;
+    console.log(evt);
+    var str = "sammer " + clickCount;
+    this.innerText = str;
+}
+function draw1() {
+    for (let y = 0; y < matrix.length; y++) {
+        for (let x = 0; x < matrix[y].length; x++) {
+            if (matrix[y][x] == 1) {
+                fill('yellow')
+            } else if (matrix[y][x] == 0) {
+                fill('red')
+            } else if (matrix[y][x] == 2) {
+                fill('yellow')
+            } else if (matrix[y][x] == 3) {
+                fill('red')
+            } else if (matrix[y][x] == 4) {
+                fill('yellow')
+            } else if (matrix[y][x] == 5) {
+                fill('red')
+            } else if (matrix[y][x] == 6) {
+                fill('yellow')
+            } else if (matrix[y][x] == 7) {
+                fill('red')
+            }
+            rect(x * side, y * side, side, side)
+        }
+    }
+}
+
+
+
+
+
+var p = document.getElementById("pElement");
+p.addEventListener("click", draw1);
+
+

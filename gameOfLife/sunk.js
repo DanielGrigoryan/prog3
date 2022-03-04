@@ -1,10 +1,7 @@
-class Sunk  {
-    constructor(x, y) {
-        this.x = x
-        this.y = y
-        this.multiply = 0
-        this.directions = [];
-        this.energy  = 10
+class Sunk extends LivingCreature {
+    constructor(x, y, index) {
+        super(x, y, index);
+        this.energy = 8;
     }
    getNewCoordinates() {
        this.directions = [
@@ -92,7 +89,7 @@ eat() {
 
 die() {
     matrix[this.y][this.x] = 0
-    for (var i in CArr) {
+    for (var i in sunkArr) {
         if (this.x == sunkArr[i].x && this.y == sunkArr[i].y) {
             sunkArr.splice(i, 1);
             break;

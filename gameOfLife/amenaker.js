@@ -1,10 +1,7 @@
-class Amenaker {
-    constructor(x, y) {
-        this.x = x
-        this.y = y
-        this.multiply = 0
-        this.directions = [];
-        this.energy = 8
+class Amenaker extends LivingCreature {
+    constructor(x, y, index) {
+        super(x, y, index);
+        this.energy = 8;
     }
     getNewCoordinates() {
         this.directions = [
