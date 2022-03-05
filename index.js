@@ -10,3 +10,20 @@ app.get("/", function(req, res){
 app.listen(3000, function(){
    console.log("Example is running on port 3000");
 });
+
+
+var fs = require('fs');
+
+
+
+var statistics = {};
+let a = 0;
+
+let b = 0;
+setInterval(function() {
+statistics.grass = a++;
+statistics.grassEater = b++;
+fs.writeFile("statistics.json", JSON.stringify( statistics), function(){
+console.log("1223")
+})
+},6)

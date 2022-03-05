@@ -68,7 +68,7 @@ let patArr = []
 let averichArr = []
 let sunkArr = []
 
-function setup() {
+function setup () {
     createCanvas(matrix[0].length * side, matrix.length * side);
     background('#acacac');
     frameRate(3)
@@ -150,14 +150,20 @@ function draw() {
         sunkArr[i].eat()
     }
 }
+
+
+
 var clickCount = 0;
-function draw1(evt) {
+function draw2(evt) {
     clickCount++;
     console.log(evt);
-    var str = "sammer " + clickCount;
+    var str = "sammer" + clickCount;
     this.innerText = str;
 }
-function draw1() {
+
+
+
+function draw2() {
     for (let y = 0; y < matrix.length; y++) {
         for (let x = 0; x < matrix[y].length; x++) {
             if (matrix[y][x] == 1) {
@@ -183,10 +189,14 @@ function draw1() {
 }
 
 
-
-
-
 var p = document.getElementById("pElement");
-p.addEventListener("click", draw1);
+p.addEventListener("click", draw2);
+
+    
+  
+
+
+
+
 
 
