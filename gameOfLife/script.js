@@ -204,28 +204,30 @@ function draw4() {
     for (let y = 0; y < matrix.length; y++) {
         for (let x = 0; x < matrix[y].length; x++) {
             if (matrix[y][x] == 1) {
-                fill('red')
+                fill('yellow')
             } else if (matrix[y][x] == 2) {
                 fill('red')
             } else if (matrix[y][x] == 4) {
-                fill('red')
+                fill('yellow')
             } else if (matrix[y][x] == 6) {
                 fill('red')
             } else if (matrix[y][x] == 0) {
-                fill('#FFFFFF')
+                fill('yellow')
             } else if (matrix[y][x] == 3) {
-                fill('#FFFFFF')
-            } else if (matrix[y][x] == 5) {
                 fill('red')
+            } else if (matrix[y][x] == 5) {
+                fill('yellow')
             } else if (matrix[y][x] == 7) {
-                fill('#FFFFFF')
+                fill('red')
             }
             rect(x * side, y * side, side, side)
         }
     }
 }
-
  
     var p = document.getElementById("pElement1");
     p.addEventListener("click", draw4);
 
+   
+
+    

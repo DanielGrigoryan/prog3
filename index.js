@@ -17,14 +17,13 @@ var fs = require('fs');
 
 
 var statistics = {};
-let a = 0;
-let b = 0;
-let c = 0;
-let e = 0;
-let d = 0;
-let k = 0;
-let z = 0;
-let x = 0;
+let a = 45;
+let b = 10;
+let c = 20;
+let e = 10;
+let d = 10;
+let k = 10;
+let z = 11;
 setInterval(function () {
    statistics.grass = a++;
    statistics.grassEater = b++;
@@ -33,9 +32,11 @@ setInterval(function () {
    statistics.averich = d++;
    statistics.amenaker = k++;
    statistics.Predator = z++;
-   statistics.grassEater = x++;
-   fs.writeFile("statistics.jscon", JSON.stringify(statistics), function () {
+   fs.writeFile("statistics.json", JSON.stringify( statistics), function(){ 
       console.log("statics")
-
+      console.log(statistics)
    })
-}, 1000)
+}, 6000)
+
+
+
