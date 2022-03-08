@@ -32,11 +32,17 @@ setInterval(function () {
    statistics.averich = d++;
    statistics.amenaker = k++;
    statistics.Predator = z++;
-   fs.writeFile("statistics.json", JSON.stringify( statistics), function(){ 
+   fs.writeFile("statistics.json", JSON.stringify(statistics), function () {
       console.log("statics")
       console.log(statistics)
+
    })
+
 }, 6000)
+
+
+
+
 
 
 
