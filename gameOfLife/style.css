@@ -2,13 +2,10 @@ h1{
     background-color:blue
 }
 
-p0{
+p{
     background-color:rgb(255, 0, 0) 
 }
 
 p1{
-    background-color:rgb(0, 255, 21) 
-}
-p2{
-    background-color:rgb(255, 208, 0) 
+    background-color:rgb(0, 119, 255) 
 }
