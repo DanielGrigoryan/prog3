@@ -38,7 +38,8 @@ setInterval(function () {
 
    })
 
-}, 6000)
+}, 1000)
+
 
 
 
