@@ -36,17 +36,18 @@ class Predator extends LivingCreature {
         var emptyCells = this.chooseCell(3);
         var newCell = random(emptyCells);
 
-        if (newCell && this.multiply >= 15) {
-            var newX = newCell[0];
-            var newY = newCell[1];
-            matrix[newY][newX] = 3;
-
-            var newGr = new Predator(newX, newY);
-            predatorArr.push(newGr);
-            this.multiply = 0;
-        }
+        setTimeout(function (){
+            if (newCell && this.multiply >= 15) {
+                var newX = newCell[0];
+                var newY = newCell[1];
+                matrix[newY][newX] = 1;
+    
+                var newPredator= new Predator(newX, newY);
+                PredatorArr.push(newPredator);
+                this.multiply = 0;
+            }
+        },4000);
     }
-
 
 
 

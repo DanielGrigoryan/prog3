@@ -35,15 +35,17 @@ mul() {
     var emptyCells = this.chooseCell(0);
     var newCell = random(emptyCells);
 
-    if (newCell && this.multiply >= 15) {
-        var newX = newCell[0];
-        var newY = newCell[1];
-        matrix[newY][newX] = 2;
+    setTimeout(function (){
+        if (newCell && this.multiply >= 15) {
+            var newX = newCell[0];
+            var newY = newCell[1];
+            matrix[newY][newX] = 1;
 
-        var newGr = new Sunk(newX, newY);
-        sunkArr.push(newGr);
-        this.multiply = 0;
-    }
+            var newsunk = new Sunk(newX, newY);
+            sunkArr.push(newsunk);
+            this.multiply = 0;
+        }
+    },4000);
 }
 
 move() {

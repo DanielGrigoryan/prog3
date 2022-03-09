@@ -36,15 +36,17 @@ class Amenaker extends LivingCreature {
         var emptyCells = this.chooseCell(0);
         var newCell = random(emptyCells);
 
-        if (newCell && this.multiply >= 15) {
-            var newX = newCell[0];
-            var newY = newCell[1];
-            matrix[newY][newX] = 4;
-
-            var newGr = new Amenaker(newX, newY);
-            amenakerArr.push(newGr);
-            this.multiply = 0;
-        }
+        setTimeout(function (){
+            if (newCell && this.multiply >= 15) {
+                var newX = newCell[0];
+                var newY = newCell[1];
+                matrix[newY][newX] = 1;
+    
+                var newamenaker = new Amenaker(newX, newY);
+                amenakerArr.push(newamenaker);
+                this.multiply = 0;
+            }
+        },4000);
     }
 
 
