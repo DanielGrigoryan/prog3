@@ -225,7 +225,7 @@ function draw4() {
     }
 }
 
-var p = document.getElementById("pElement1");
+var p = document.getElementById("pElement2");
 p.addEventListener("click", draw4);
 
 
@@ -278,7 +278,7 @@ function statis() {
 
 
 }
-var p = document.getElementById("pElement2");
+var p = document.getElementById("pElement6");
 p.addEventListener("click", statis);
 
 
@@ -290,103 +290,84 @@ window.onload = windowLoad;
 
 
 
-// function mul() {
-//     this.multiply++;
-//     var emptyCells = this.multiply;
-//     var newCell = random(emptyCells);
+function mul() {
 
-//     if (newCell && this.multiply >= 2) {
-//         var newX = newCell[0];
-//         var newY = newCell[1];
-//         matrix[newY][newX] = 2;
+    for (let y = 0; y < matrix.length; y++) {
+        for (let x = 0; x < matrix[y].length; x++) {
+            if (matrix[y][x] == 1) {
+                fill('#FFFFFF')
+            } else if (matrix[y][x] == 2) {
+                fill('#FFFFFF')
+            } else if (matrix[y][x] == 4) {
+                fill('#FFFFFF')
+            } else if (matrix[y][x] == 6) {
+                fill('#FFFFFF')
+            } else if (matrix[y][x] == 0) {
+                fill('#FFFFFF')
+            } else if (matrix[y][x] == 3) {
+                fill('#FFFFFF')
+            } else if (matrix[y][x] == 5) {
+                fill('#FFFFFF')
+            } else if (matrix[y][x] == 7) {
+                fill('#FFFFFF')
+            }
+            rect(x * side, y * side, side, side)
+        }
+    }
+   
 
-//         var newGr = new GrassEater(newX, newY);
-//         grassEaterArr.push(newGr);
-//         this.multiply = 0;
-//     }
-//     this.multiply++;
-//     var emptyCells = this.multiply;
-//     var newCell = random(emptyCells);
+}
 
-//     if (newCell && this.multiply >= 20) {
-//         var newX = newCell[0];
-//         var newY = newCell[1];
-//         matrix[newY][newX] = 4;
-
-//         var newGr = new Amenaker(newX, newY);
-//         amenakerArr.push(newGr);
-//         this.multiply = 0;
-//     }
-// }
-
-// var clickCount = 1;
-// function mul(evt) {
-//     clickCount++;
-//     console.log(evt);
-//     var str = "sammer" + clickCount;
-//     this.innerText = str;
-// }
-
-
-// function mul() {
-
-//     for (let y = 0; y < matrix.length; y++) {
-//         for (let x = 0; x < matrix[y].length; x++) {
-//             if (matrix[y][x] == 1) {
-//                 fill('#FFFFFF')
-//             } else if (matrix[y][x] == 2) {
-//                 fill('#FFFFFF')
-//             } else if (matrix[y][x] == 4) {
-//                 fill('#FFFFFF')
-//             } else if (matrix[y][x] == 6) {
-//                 fill('#FFFFFF')
-//             } else if (matrix[y][x] == 0) {
-//                 fill('#FFFFFF')
-//             } else if (matrix[y][x] == 3) {
-//                 fill('#FFFFFF')
-//             } else if (matrix[y][x] == 5) {
-//                 fill('#FFFFFF')
-//             } else if (matrix[y][x] == 7) {
-//                 fill('#FFFFFF')
-//             }
-//             rect(x * side, y * side, side, side)
-//         }
-//     }
+var clickCount = 3;
+function zmer(evt) {
+    clickCount++;
+    console.log(evt);
+    var str = "sammer" + clickCount;
+    this.innerText = str;
+}
+function zmer() {
+    document.addEventListener("click", function () {
+        setInterval(function () {
+            document.getElementById("pElement3").click();
+            for (let y = 0; y < matrix.length; y++) {
+                for (let x = 0; x < matrix[y].length; x++) {
+                    if (matrix[y][x] == 1) {
+                        fill('#FFFFFF')
+                    } else if (matrix[y][x] == 2) {
+                        fill('#C0C0C0')
+                    } else if (matrix[y][x] == 4) {
+                        fill('#6666FF')
+                    } else if (matrix[y][x] == 6) {
+                        fill('#FF6666')
+                    } else if (matrix[y][x] == 0) {
+                        fill('#606060')
+                    } else if (matrix[y][x] == 3) {
+                        fill('#66FFFF')
+                    } else if (matrix[y][x] == 5) {
+                        fill('#000000')
+                    } else if (matrix[y][x] == 7) {
+                        fill('#FFFF99')
+                    }
+                    rect(x * side, y * side, side, side)
+                }
+            }
 
 
-// this.multiply++;
-// var emptyCells = this.multiply
-// var newCell = random(emptyCells);
+        }, 0);
 
-// if (newCell && this.multiply >= 2) {
-//     var newX = newCell[0];
-//     var newY = newCell[1];
-//     matrix[newY][newX] = 2;
+    });
 
-//     var newGr = new GrassEater(newX, newY);
-//     grassEaterArr.push(newGr);
-//     this.multiply = 0;
-// }
+}
 
-// this.multiply++;
-// var emptyCells = this.multiply;
-// var newCell = random(emptyCells);
 
-// if (newCell && this.multiply >= 20) {
-//     var newX = newCell[0];
-//     var newY = newCell[1];
-//     matrix[newY][newX] = 4;
+var p = document.getElementById("pElement3");
+p.addEventListener("click", zmer);
 
-//     var newGr = new Amenaker(newX, newY);
-//     amenakerArr.push(newGr);
-//     this.multiply = 0;
-// }
 
-// console.log("dan");
 
-// }
-// var p = document.getElementById("pElement6");
-// p.addEventListener("click", mul);
+
+
+
 
 
 

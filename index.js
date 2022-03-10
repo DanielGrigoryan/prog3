@@ -34,7 +34,7 @@ setInterval(function () {
    statistics.Predator = z++;
    fs.writeFile("statistics.json", JSON.stringify(statistics), function () {
       console.log("statics")
-      console.log(statistics)
+      console.log (statistics)
 
    })
 

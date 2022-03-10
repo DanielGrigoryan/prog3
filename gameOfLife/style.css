@@ -1,16 +1,22 @@
 h1{
     background-color:blue
 }
-
-h2{
-    background-color:rgb(170, 170, 221)
+button{
+    background-color:rgb(168, 168, 209)
 }
 
 p{
     background-color:rgb(255, 0, 0) 
 }
+p2{
+    background-color:rgb(255, 187, 0) 
+}
+
 
 p1{
     background-color:rgb(81, 255, 0) 
 }
 
+p5{
+    background-color:rgb(255, 0, 179) 
+}
