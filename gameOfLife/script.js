@@ -282,41 +282,15 @@ var p = document.getElementById("pElement6");
 p.addEventListener("click", statis);
 
 
+
 function windowLoad() {
-    console.log("winter");
-}
-window.onload = windowLoad;
-
-
-
-
-function mul() {
-
-    for (let y = 0; y < matrix.length; y++) {
-        for (let x = 0; x < matrix[y].length; x++) {
-            if (matrix[y][x] == 1) {
-                fill('#FFFFFF')
-            } else if (matrix[y][x] == 2) {
-                fill('#FFFFFF')
-            } else if (matrix[y][x] == 4) {
-                fill('#FFFFFF')
-            } else if (matrix[y][x] == 6) {
-                fill('#FFFFFF')
-            } else if (matrix[y][x] == 0) {
-                fill('#FFFFFF')
-            } else if (matrix[y][x] == 3) {
-                fill('#FFFFFF')
-            } else if (matrix[y][x] == 5) {
-                fill('#FFFFFF')
-            } else if (matrix[y][x] == 7) {
-                fill('#FFFFFF')
-            }
-            rect(x * side, y * side, side, side)
-        }
+        console.log("winter");
     }
-   
+    window.onload = windowLoad;
 
-}
+
+
+
 
 var clickCount = 3;
 function zmer(evt) {
@@ -340,7 +314,7 @@ function zmer() {
                     } else if (matrix[y][x] == 6) {
                         fill('#FF6666')
                     } else if (matrix[y][x] == 0) {
-                        fill('#606060')
+                        fill('#acacac')
                     } else if (matrix[y][x] == 3) {
                         fill('#66FFFF')
                     } else if (matrix[y][x] == 5) {
@@ -353,9 +327,10 @@ function zmer() {
             }
 
 
-        }, 0);
+        }, 1);
 
     });
+    
 
 }
 
